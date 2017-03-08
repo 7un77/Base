@@ -1,12 +1,12 @@
 //
 //  SUVMProtocol.h
-//  SUItems
 //
 //  Created by June on 17/3/7.
 //  Copyright © 2017年 http://h94uang@gmail.com All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "SURequest.h"
 
 typedef enum : NSUInteger {
     HeaderRefresh_HasMoreData = 1,
@@ -23,7 +23,7 @@ typedef enum : NSUInteger {
 
 - (instancetype)initWithModel:(id)model;
 
-//@property (strong, nonatomic)CMRequest *request;
+@property (strong, nonatomic) SURequest *request;
 
 /**
  *  初始化
