@@ -17,6 +17,38 @@
 
 @implementation SUVC
 
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    
+    SUVC *viewController = [super allocWithZone:zone];
+    
+    @weakify(viewController)
+    
+    [[viewController rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
+        
+        @strongify(viewController)
+        [viewController addSubviews];
+        [viewController bindViewModel];
+    }];
+    
+    [[viewController rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
+        
+        @strongify(viewController)
+        [viewController layoutNavigation];
+        [viewController getNewData];
+    }];
+    
+    return viewController;
+}
+
+- (instancetype)initWithViewModel:(id<SUVMProtocol>)viewModel {
+    
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -170,21 +202,21 @@
 /**
  *  添加控件
  */
-- (void)yd_addSubviews { }
+- (void)addSubviews { }
 
 /**
  *  绑定
  */
-- (void)yd_bindViewModel { }
+- (void)bindViewModel { }
 
 /**
  *  设置navation
  */
-- (void)yd_layoutNavigation { }
+- (void)layoutNavigation { }
 
 /**
  *  初次获取数据
  */
-- (void)yd_getNewData { }
+- (void)getNewData { }
 
 @end

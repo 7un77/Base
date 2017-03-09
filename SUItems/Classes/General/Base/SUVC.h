@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SUVCProtocol.h"
+#import "SUVMProtocol.h"
 
 @interface SUVC : UIViewController <SUVCProtocol>
 

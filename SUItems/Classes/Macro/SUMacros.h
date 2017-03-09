@@ -140,8 +140,8 @@
 // 便利的初始化方法
 #define IMAGE(imgName)          [UIImage imageNamed:imgName]
 #define URL(url)                [NSURL URLWithString:url]
-#define STRING(str1,str2)       [NSString stringWithFormat:@"%@%@",str1,str2]
-#define STRING(str1)            [NSString stringWithFormat:@"%@",str1]
+#define STRING2(str1,str2)       [NSString stringWithFormat:@"%@%@",str1,str2]
+#define STRING1(str1)            [NSString stringWithFormat:@"%@",str1]
 #define STRING_NUM(num1)        [NSString stringWithFormat:@"%d",num1]
 #define STRING_INTGER(num1)     [NSString stringWithFormat:@"%ld",num1]
 #define STRING_FLOAT(float1)    [NSString stringWithFormat:@"%f",float1];
@@ -155,7 +155,7 @@
 #define FloatTranslateStr(float_str) [NSString stringWithFormat:@"%.2d",float_str];
 
 // 判断字段穿为空
-#define IF_NULL_TO_STRING(x) ([(x) isEqual:[NSNull null]]||(x)==nil)? @"":STRING(x)
+#define IF_NULL_TO_STRING(x) ([(x) isEqual:[NSNull null]]||(x)==nil)? @"":STRING1(x)
 
 // 本地化字符串
 /** NSLocalizedString宏做的其实就是在当前bundle中查找资源文件名“Localizable.strings”(参数:键＋注释) */
@@ -207,10 +207,10 @@
 #define VersionLargerThan10     (FloatSystemVersion >= 10.0)
 
 // 系统版本号
-#define Version7  (FloatSystemVersion == 7.0)
-#define Version8  (FloatSystemVersion == 8.0)
-#define Version8  (FloatSystemVersion == 9.0)
-#define Version8  (FloatSystemVersion == 10.0)
+#define Version7    (FloatSystemVersion == 7.0)
+#define Version8    (FloatSystemVersion == 8.0)
+#define Version9    (FloatSystemVersion == 9.0)
+#define Version10   (FloatSystemVersion == 10.0)
 
 ///获取Xcode的版本号
 #define XcodeAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]

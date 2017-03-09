@@ -139,6 +139,7 @@
 		7C2A525E1E700EB2005FEB3F /* SUVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUVM.m; sourceTree = "<group>"; };
 		7C2A52601E700EF3005FEB3F /* SURequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SURequest.h; sourceTree = "<group>"; };
 		7C2A52611E700EF3005FEB3F /* SURequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SURequest.m; sourceTree = "<group>"; };
+		7C2A52631E7011CD005FEB3F /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A26DB08702B3CF1DEC89C4C7 /* Pods-SUItems.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SUItems.release.xcconfig"; path = "Pods/Target Support Files/Pods-SUItems/Pods-SUItems.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -364,6 +365,7 @@
 		7C2A51B41E6EB9F5005FEB3F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				7C2A52631E7011CD005FEB3F /* PrefixHeader.pch */,
 				7C2A51B51E6EB9F5005FEB3F /* Assets.xcassets */,
 				7C2A51B61E6EB9F5005FEB3F /* LaunchScreen.storyboard */,
 				7C2A51B81E6EB9F5005FEB3F /* Main.storyboard */,
@@ -858,6 +860,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XC769V9DQQ;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SUItems/Support Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SUItems/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -873,6 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = XC769V9DQQ;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SUItems/Support Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/SUItems/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
