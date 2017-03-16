@@ -10,6 +10,7 @@
 
 #define wSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
+/* ****************************************************************************************************************** */
 /** DEBUG LOG **/
 #ifdef DEBUG
 
@@ -21,7 +22,22 @@
 
 #endif
 
+/* ****************************************************************************************************************** */
+/** TODO **/
+#define STRINGIFY(S) #S
 
+#define DEFER_STRINGIFY(S) STRINGIFY(S)
+
+#define PRAGMA_MESSAGE(MSG) _Pragma(STRINGIFY(message(MSG)))
+
+#define FORMATTED_MESSAGE(MSG) "@TODO: " MSG " \n" \
+    DEFER_STRINGIFY(__FILE__) " line " DEFER_STRINGIFY(__LINE__)
+
+#define KEYWORDIFY try {} @catch (...) {}
+
+#define TODO(MSG) KEYWORDIFY PRAGMA_MESSAGE(FORMATTED_MESSAGE(MSG))
+
+/* ****************************************************************************************************************** */
 /** DEBUG RELEASE **/
 #if DEBUG
 
@@ -33,7 +49,7 @@
 
 #endif
 
-
+/* ****************************************************************************************************************** */
 /** NIL RELEASE **/
 #define NILRelease(x)           [x release], x = nil
 
@@ -45,12 +61,14 @@
 #define delayRun05 dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kDelay01 * NSEC_PER_SEC)), dispatch_get_main_queue()
 
 #define kFileManager    [NSFileManager defaultManager]
+
 #define kUserDefaults   [NSUserDefaults standardUserDefaults]
+
 #define kWindow         [[UIApplication sharedApplication] keyWindow]
 
 
 /* ****************************************************************************************************************** */
-#pragma mark - view
+#pragma mark - View
 
 /**
  *  UIScreen width.
@@ -98,10 +116,15 @@
 #define  ChineseKeyboardHeight  (252.f)
 
 #define RECT_CHANGE_x(v,x)          CGRectMake(x, Y(v), WIDTH(v), HEIGHT(v))
+
 #define RECT_CHANGE_y(v,y)          CGRectMake(X(v), y, WIDTH(v), HEIGHT(v))
+
 #define RECT_CHANGE_point(v,x,y)    CGRectMake(x, y, WIDTH(v), HEIGHT(v))
+
 #define RECT_CHANGE_width(v,w)      CGRectMake(X(v), Y(v), w, HEIGHT(v))
+
 #define RECT_CHANGE_height(v,h)     CGRectMake(X(v), Y(v), WIDTH(v), h)
+
 #define RECT_CHANGE_size(v,w,h)     CGRectMake(X(v), Y(v), w, h)
 
 // View 圆角和加边框
@@ -140,8 +163,8 @@
 // 便利的初始化方法
 #define IMAGE(imgName)          [UIImage imageNamed:imgName]
 #define URL(url)                [NSURL URLWithString:url]
-#define STRING2(str1,str2)       [NSString stringWithFormat:@"%@%@",str1,str2]
-#define STRING1(str1)            [NSString stringWithFormat:@"%@",str1]
+#define STRING2(str1,str2)      [NSString stringWithFormat:@"%@%@",str1,str2]
+#define STRING1(str1)           [NSString stringWithFormat:@"%@",str1]
 #define STRING_NUM(num1)        [NSString stringWithFormat:@"%d",num1]
 #define STRING_INTGER(num1)     [NSString stringWithFormat:@"%ld",num1]
 #define STRING_FLOAT(float1)    [NSString stringWithFormat:@"%f",float1];
@@ -188,10 +211,7 @@
 
 
 /* ****************************************************************************************************************** */
-#pragma mark - system
-
-// 系统版本号
-#define _DEVICE_SYSTEM_VERSION_  [[[UIDevice currentDevice] systemVersion]floatValue]
+#pragma mark - System
 
 // 设备的UDID号
 //#define UDID [[[UIDevice currentDevice] identifierForVendor] UUIDString]

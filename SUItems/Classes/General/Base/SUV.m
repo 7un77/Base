@@ -14,8 +14,8 @@
     self = [super init];
     if (self) {
         
-        [self yd_setupViews];
-        [self yd_bindViewModel];
+        [self setupViews];
+        [self bindViewModel];
     }
     return self;
 }
@@ -25,29 +25,29 @@
     self = [super init];
     if (self) {
         
-        [self yd_setupViews];
-        [self yd_bindViewModel];
+        [self setupViews];
+        [self bindViewModel];
     }
     return self;
 }
 
-- (void)yd_bindViewModel {
+- (void)bindViewModel {
 }
 
-- (void)yd_setupViews {
+- (void)setupViews {
 }
 
-- (void)yd_addReturnKeyBoard {
+- (void)addReturnKeyBoard {
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
     tap.numberOfTapsRequired = 1;
     tap.numberOfTouchesRequired = 1;
-//    [tap.rac_gestureSignal subscribeNext:^(id x) {
+    [tap.rac_gestureSignal subscribeNext:^(id x) {
     
-//        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//        [appDelegate.window endEditing:YES];
-//    }];
-//    [self addGestureRecognizer:tap];
+        SUAppDelegate *appDelegate = (SUAppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate.window endEditing:YES];
+    }];
+    [self addGestureRecognizer:tap];
 }
 
 @end

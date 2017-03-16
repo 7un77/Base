@@ -6,9 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SUVMProtocol.h"
 
-@protocol SUVProtocol;
+@protocol SUVMProtocol;
+
 @protocol SUVProtocol <NSObject>
 
 @optional

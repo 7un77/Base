@@ -23,6 +23,13 @@
     
     @weakify(viewController)
     
+    /**
+     订阅两个信号
+     该信号会在方法被调用时,将方法中的所有参数以 @see RACTuple 的形式发送到返回的信号上
+     
+     @param 方法: 触发器
+     @return nil
+     */
     [[viewController rac_signalForSelector:@selector(viewDidLoad)] subscribeNext:^(id x) {
         
         @strongify(viewController)
@@ -43,15 +50,14 @@
 - (instancetype)initWithViewModel:(id<SUVMProtocol>)viewModel {
     
     self = [super init];
-    if (self) {
-    }
+    if (self) { }
     return self;
 }
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    sLog(@"");
 }
 
 #pragma mark - system

@@ -6,16 +6,36 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SURequest.h"
 
-typedef enum : NSUInteger {
+/**
+ 数据刷新状态
+
+ - HeaderRefresh_HasMoreData:   下拉还有更多数据
+ - HeaderRefresh_HasNoMoreData: 下拉没有更多数据
+ - FooterRefresh_HasMoreData:   上拉还有更多数据
+ - FooterRefresh_HasNoMoreData: 上拉没有更多数据
+ - RefreshError:                刷新错误
+ - RefreshUI:                   仅刷新UI布局
+ */
+typedef NS_ENUM(NSUInteger,RefreshDataStatus) {
     HeaderRefresh_HasMoreData = 1,
     HeaderRefresh_HasNoMoreData,
     FooterRefresh_HasMoreData,
     FooterRefresh_HasNoMoreData,
     RefreshError,
-    RefreshUI,
-} RefreshDataStatus;
+    RefreshUI
+};
+
+// * 枚举映射 -> 字符串
+// * NSString *refreshStatus = RefreshDataStatusMapper[FooterRefresh_HasNoMoreData];
+const NSString *RefreshDataStatusMapper[] = {
+    [HeaderRefresh_HasMoreData]     = @"下拉还有更多数据",
+    [HeaderRefresh_HasNoMoreData]   = @"下拉已经没有数据了",
+    [FooterRefresh_HasMoreData]     = @"上拉还有更多数据",
+    [FooterRefresh_HasNoMoreData]   = @"上拉已经没有数据了",
+    [RefreshError]                  = @"刷新失败了",
+    [RefreshUI]                     = @"仅刷新布局"
+};
 
 @protocol SUVMProtocol <NSObject>
 

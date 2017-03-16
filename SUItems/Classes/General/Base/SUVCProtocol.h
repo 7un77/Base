@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol SUVMProtocol;
+
 @protocol SUVCProtocol <NSObject>
 
 @optional
