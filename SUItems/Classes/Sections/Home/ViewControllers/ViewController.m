@@ -28,7 +28,6 @@
 #pragma mark - private
 - (void)addSubviews { // 添加子View
     
-    
 }
 
 - (void)bindViewModel {
