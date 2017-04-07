@@ -5,20 +5,29 @@
 //  Copyright © 2017年 http://h94uang@gmail.com All rights reserved.
 //
 
-#ifndef ACMacros_h
-#define ACMacros_h
+#ifndef SUMacros_h
+#define SUMacros_h
 
-#define wSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define KEYWORDIFY try {} @catch (...) {}
+
+#define weakself KEYWORDIFY __weak typeof(self) weakself = self
+#define weakobj(o) KEYWORDIFY __weak typeof(o) o##weakobj = o
+
+#define kFileManager    [NSFileManager defaultManager]
+
+#define kUserDefaults   [NSUserDefaults standardUserDefaults]
+
+#define kWindow         [[UIApplication sharedApplication] keyWindow]
 
 /* ****************************************************************************************************************** */
 /** DEBUG LOG **/
 #ifdef DEBUG
 
-#define sLog( s, ... ) NSLog( @"< %@:(%d) > %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#define slog( s, ... ) NSLog( @"< %@:(%d) > \n ⚡️ %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
 
 #else
 
-#define sLog( s, ... )
+#define slog( s, ... )
 
 #endif
 
@@ -31,40 +40,12 @@
 #define PRAGMA_MESSAGE(MSG) _Pragma(STRINGIFY(message(MSG)))
 
 #define FORMATTED_MESSAGE(MSG) "@TODO: " MSG " \n" \
-    DEFER_STRINGIFY(__FILE__) " line " DEFER_STRINGIFY(__LINE__)
+DEFER_STRINGIFY(__FILE__) " line " DEFER_STRINGIFY(__LINE__)
 
-#define KEYWORDIFY try {} @catch (...) {}
+
 
 #define TODO(MSG) KEYWORDIFY PRAGMA_MESSAGE(FORMATTED_MESSAGE(MSG))
 
-/* ****************************************************************************************************************** */
-/** DEBUG RELEASE **/
-#if DEBUG
-
-#define MCRelease(x)            [x release]
-
-#else
-
-#define MCRelease(x)            [x release], x = nil
-
-#endif
-
-/* ****************************************************************************************************************** */
-/** NIL RELEASE **/
-#define NILRelease(x)           [x release], x = nil
-
-
-#define kDelay  1.5
-#define delayRun dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kDelay * NSEC_PER_SEC)), dispatch_get_main_queue()
-
-#define kDelay01  0.7
-#define delayRun05 dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kDelay01 * NSEC_PER_SEC)), dispatch_get_main_queue()
-
-#define kFileManager    [NSFileManager defaultManager]
-
-#define kUserDefaults   [NSUserDefaults standardUserDefaults]
-
-#define kWindow         [[UIApplication sharedApplication] keyWindow]
 
 
 /* ****************************************************************************************************************** */
@@ -188,11 +169,11 @@
 
 // RGB颜色转换（16进制->10进制）
 #define UIColorFromRGB(rgbValue)\
-                                \
-                                [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
-                                                green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
-                                                 blue:((float)(rgbValue & 0xFF))/255.0 \
-                                                alpha:1.0]
+\
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 \
+alpha:1.0]
 
 #if TARGET_OS_IPHONE
 /** iPhone Device */
@@ -315,32 +296,32 @@
 // 条件LOG
 #ifdef ITTDEBUG
 #define ITTDCONDITIONLOG(condition, xx, ...)\
-                                \
-                                {\
-                                    if ((condition))\
-                                    {\
-                                        ITTDPRINT(xx, ##__VA_ARGS__);\
-                                    }\
-                                }
+\
+{\
+if ((condition))\
+{\
+ITTDPRINT(xx, ##__VA_ARGS__);\
+}\
+}
 #else
 #define ITTDCONDITIONLOG(condition, xx, ...)\
-                                \
-                                ((void)0)
+\
+((void)0)
 #endif
 
 // 断点Assert
 #define ITTAssert(condition, ...)\
-                                \
-                                do {\
-                                    if (!(condition))\
-                                    {\
-                                        [[NSAssertionHandler currentHandler]\
-                                        handleFailureInFunction:[NSString stringWithFormat:@"< %s >", __PRETTY_FUNCTION__]\
-                                                           file:[[NSString stringWithUTF8String:__FILE__] lastPathComponent]\
-                                                     lineNumber:__LINE__\
-                                                    description:__VA_ARGS__];\
-                                    }\
-                                } while(0)
+\
+do {\
+if (!(condition))\
+{\
+[[NSAssertionHandler currentHandler]\
+handleFailureInFunction:[NSString stringWithFormat:@"< %s >", __PRETTY_FUNCTION__]\
+file:[[NSString stringWithUTF8String:__FILE__] lastPathComponent]\
+lineNumber:__LINE__\
+description:__VA_ARGS__];\
+}\
+} while(0)
 
 
 /* ************************************************************************************************* */
@@ -415,15 +396,15 @@
 //** textAlignment ***********************************************************************************
 
 #if !defined __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_5_0
-    # define LINE_BREAK_WORD_WRAP UILineBreakModeWordWrap
-    # define TextAlignmentLeft UITextAlignmentLeft
-    # define TextAlignmentCenter UITextAlignmentCenter
-    # define TextAlignmentRight UITextAlignmentRight
+# define LINE_BREAK_WORD_WRAP UILineBreakModeWordWrap
+# define TextAlignmentLeft UITextAlignmentLeft
+# define TextAlignmentCenter UITextAlignmentCenter
+# define TextAlignmentRight UITextAlignmentRight
 #else
-    # define LINE_BREAK_WORD_WRAP NSLineBreakByWordWrapping
-    # define TextAlignmentLeft NSTextAlignmentLeft
-    # define TextAlignmentCenter NSTextAlignmentCenter
-    # define TextAlignmentRight NSTextAlignmentRight
+# define LINE_BREAK_WORD_WRAP NSLineBreakByWordWrapping
+# define TextAlignmentLeft NSTextAlignmentLeft
+# define TextAlignmentCenter NSTextAlignmentCenter
+# define TextAlignmentRight NSTextAlignmentRight
 #endif
 
 

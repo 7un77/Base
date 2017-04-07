@@ -57,7 +57,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    sLog(@"");
+    slog(@"");
 }
 
 #pragma mark - system

@@ -45,8 +45,7 @@
 		7C2A52581E6F95E7005FEB3F /* MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A52571E6F95E7005FEB3F /* MD5.m */; };
 		7C2A525F1E700EB2005FEB3F /* SUVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A525E1E700EB2005FEB3F /* SUVM.m */; };
 		7C2A52621E700EF3005FEB3F /* SURequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A52611E700EF3005FEB3F /* SURequest.m */; };
-		7C2A52661E70E114005FEB3F /* SUStartApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A52651E70E114005FEB3F /* SUStartApp.m */; };
-		7C2A52691E70E14E005FEB3F /* SUThirdPartService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A52681E70E14E005FEB3F /* SUThirdPartService.m */; };
+		7C2A52661E70E114005FEB3F /* SUSupportService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A52651E70E114005FEB3F /* SUSupportService.m */; };
 		7C2A526C1E70E5BB005FEB3F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A526B1E70E5BB005FEB3F /* ViewController.m */; };
 		DE6A120E83AFC72AD99C5F60 /* Pods_SUItems.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E819CA6428C898D783EAD85 /* Pods_SUItems.framework */; };
 /* End PBXBuildFile section */
@@ -139,10 +138,8 @@
 		7C2A525E1E700EB2005FEB3F /* SUVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUVM.m; sourceTree = "<group>"; };
 		7C2A52601E700EF3005FEB3F /* SURequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SURequest.h; sourceTree = "<group>"; };
 		7C2A52611E700EF3005FEB3F /* SURequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SURequest.m; sourceTree = "<group>"; };
-		7C2A52641E70E114005FEB3F /* SUStartApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUStartApp.h; sourceTree = "<group>"; };
-		7C2A52651E70E114005FEB3F /* SUStartApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUStartApp.m; sourceTree = "<group>"; };
-		7C2A52671E70E14E005FEB3F /* SUThirdPartService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUThirdPartService.h; sourceTree = "<group>"; };
-		7C2A52681E70E14E005FEB3F /* SUThirdPartService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUThirdPartService.m; sourceTree = "<group>"; };
+		7C2A52641E70E114005FEB3F /* SUSupportService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUSupportService.h; sourceTree = "<group>"; };
+		7C2A52651E70E114005FEB3F /* SUSupportService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUSupportService.m; sourceTree = "<group>"; };
 		7C2A526A1E70E5BB005FEB3F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7C2A526B1E70E5BB005FEB3F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7CC6979D1E7A34FD0013DF52 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -203,10 +200,8 @@
 			children = (
 				7C2A519F1E6EB9F5005FEB3F /* SUAppDelegate.h */,
 				7C2A51A01E6EB9F5005FEB3F /* SUAppDelegate.m */,
-				7C2A52641E70E114005FEB3F /* SUStartApp.h */,
-				7C2A52651E70E114005FEB3F /* SUStartApp.m */,
-				7C2A52671E70E14E005FEB3F /* SUThirdPartService.h */,
-				7C2A52681E70E14E005FEB3F /* SUThirdPartService.m */,
+				7C2A52641E70E114005FEB3F /* SUSupportService.h */,
+				7C2A52651E70E114005FEB3F /* SUSupportService.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -732,7 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C2A52481E6F9444005FEB3F /* NSString+Validation.m in Sources */,
-				7C2A52661E70E114005FEB3F /* SUStartApp.m in Sources */,
+				7C2A52661E70E114005FEB3F /* SUSupportService.m in Sources */,
 				7C2A51D41E6EBCFA005FEB3F /* SUV.m in Sources */,
 				7C2A51E41E6EBE9D005FEB3F /* SUTableVHeaderFooterV.m in Sources */,
 				7C2A523E1E6F9444005FEB3F /* NSDate+Compare.m in Sources */,
@@ -744,7 +739,6 @@
 				7C2A52461E6F9444005FEB3F /* NSString+MD5.m in Sources */,
 				7C2A52421E6F9444005FEB3F /* NSString+CurrentTime.m in Sources */,
 				7C2A523F1E6F9444005FEB3F /* NSDate+Converter.m in Sources */,
-				7C2A52691E70E14E005FEB3F /* SUThirdPartService.m in Sources */,
 				7C2A523A1E6F9444005FEB3F /* NSString+JSONData.m in Sources */,
 				7C2A52541E6F9522005FEB3F /* NSDate+SUConvert.m in Sources */,
 				7C2A52371E6F9444005FEB3F /* NSArray+JSONData.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  SUStartApp.h
+//  SUSupportService.h
 //  SUItems
 //
 //  Created by June on 17/3/9.
@@ -8,9 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-/**
- App启动
- */
-@interface SUStartApp : NSObject
+@interface SUSupportService : NSObject
 
 @end
