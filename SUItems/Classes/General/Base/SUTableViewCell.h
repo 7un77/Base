@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SUTableVCellProtocol.h"
+#import "SUTableViewCellProtocol.h"
 
-@interface SUTableVCell : UITableViewCell <SUTableVCellProtocol>
+@interface SUTableViewCell : UITableViewCell <SUTableViewCellProtocol>
 
 @end

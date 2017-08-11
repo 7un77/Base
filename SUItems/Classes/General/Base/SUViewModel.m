@@ -5,14 +5,14 @@
 //  Copyright © 2017年 http://h94uang@gmail.com. All rights reserved.
 //
 
-#import "SUVM.h"
+#import "SUViewModel.h"
 
-@implementation SUVM
+@implementation SUViewModel
 @synthesize request  = _request;
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
     
-    SUVM *viewModel = [super allocWithZone:zone];
+    SUViewModel *viewModel = [super allocWithZone:zone];
     
     if (viewModel) {
         

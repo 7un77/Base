@@ -8,6 +8,8 @@
 
 #import "SUSupportService.h"
 #import <Reachability/Reachability.h>
+#import "SUUserEntity.h"
+#import "ViewController.h"
 
 @interface SUSupportService ()
 
@@ -43,6 +45,8 @@
         [[self class] setupWholeData];                      // 配置全局数据
         [[self class] setupKeyBord];                        // 配置键盘管理
         [[self class] setupOutsideSDK];                     // 配置第三方SDK
+        [[self class] setupRootController];                 // 配置根控制器
+        
         
     });
 }
@@ -54,6 +58,38 @@
     [support setupReachability];
     
     return support;
+}
+
+#pragma mark - 设置程序根控制器
++ (void)setupRootController {
+    
+    slog(@"配置程序根控制器");
+    
+    // 用户登录状态
+    BOOL isLogin = SUUserEntity.isLogin;
+    
+    // 是否是更新后首次启动
+    BOOL isFirstRun = SUUserEntity.firstRunAfterUpdate;
+    
+    if (isLogin) {
+        
+        ViewController *controller = [ViewController new];
+        
+        SUAppDelegate* delegate = (SUAppDelegate *)UIApplication.sharedApplication.delegate;
+        
+        delegate.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+        delegate.window.backgroundColor = [UIColor whiteColor];
+    
+        delegate.window.rootViewController = controller;
+        
+        [delegate.window makeKeyAndVisible];
+        
+    }else {
+        
+        
+    }
+
 }
 
 #pragma mark - 键盘回收相关
@@ -78,7 +114,7 @@
     // QQ
     // Sina
     // UMeng
-    // push
+    // Push
     
 }
 

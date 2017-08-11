@@ -5,9 +5,9 @@
 //  Copyright © 2017年 http://h94uang@gmail.com All rights reserved.
 //
 
-#import "SUTableVHeaderFooterV.h"
+#import "SUTableHeaderFooterView.h"
 
-@implementation SUTableVHeaderFooterV
+@implementation SUTableHeaderFooterView
 
 /*
 // Only override drawRect: if you perform custom drawing.

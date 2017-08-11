@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SUCollectionVCellProtocol.h"
+#import "SUCollectionViewCellProtocol.h"
 
-@interface SUCollectionVCell : UICollectionViewCell <SUCollectionVCellProtocol>
+@interface SUCollectionViewCell : UICollectionViewCell <SUCollectionViewCellProtocol>
 
 @end

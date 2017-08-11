@@ -1,13 +1,14 @@
 //
-//  SUVM.h
+//  SUModel.h
+//  SUItems
 //
-//  Created by June on 17/3/8.
+//  Created by 黄俊 on 2017/8/11.
 //  Copyright © 2017年 http://h94uang@gmail.com. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "SUVMProtocol.h"
+#import "FastCoder.h"
 
-@interface SUVM : NSObject <SUVMProtocol>
+@interface SUEntity : NSObject
 
 @end

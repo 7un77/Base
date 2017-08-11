@@ -33,21 +33,8 @@
     
     self.support = [SUSupportService new];
     
-    [self setupRootViewController];
 }
 
-- (void)setupRootViewController {
-    
-    ViewController *controller = [ViewController new];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    
-    self.window.rootViewController = controller;
-    
-    [self.window makeKeyAndVisible];
-}
 
 
 @end

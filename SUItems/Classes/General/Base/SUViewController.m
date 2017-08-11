@@ -5,9 +5,10 @@
 //  Copyright © 2017年 http://h94uang@gmail.com All rights reserved.
 //
 
-#import "SUVC.h"
+#import "SUViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
-@interface SUVC ()
+@interface SUViewController ()
 
 @property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
 @property (nonatomic, assign) BOOL statusBarHidden;
@@ -15,11 +16,11 @@
 
 @end
 
-@implementation SUVC
+@implementation SUViewController
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
     
-    SUVC *viewController = [super allocWithZone:zone];
+    SUViewController *viewController = [super allocWithZone:zone];
     
     @weakify(viewController)
     
@@ -47,7 +48,7 @@
     return viewController;
 }
 
-- (instancetype)initWithViewModel:(id<SUVMProtocol>)viewModel {
+- (instancetype)initWithViewModel:(id<SUViewModelProtocol>)viewModel {
     
     self = [super init];
     if (self) { }
@@ -87,7 +88,7 @@
 /**
  *  去除nav 上的line
  */
-- (void)yd_removeNavgationBarLine {
+- (void)removeNavgationBarLine {
     
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)]){
         

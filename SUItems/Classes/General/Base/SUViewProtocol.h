@@ -7,13 +7,13 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SUVMProtocol;
+@protocol SUViewModelProtocol;
 
-@protocol SUVProtocol <NSObject>
+@protocol SUViewProtocol <NSObject>
 
 @optional
 
-- (instancetype)initWithViewModel:(id <SUVMProtocol>)viewModel;
+- (instancetype)initWithViewModel:(id <SUViewModelProtocol>)viewModel;
 
 - (void)bindViewModel;
 - (void)setupViews;

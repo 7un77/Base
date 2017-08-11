@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SUTableVHeaderFooterVProtocol <NSObject>
+@protocol SUTableHeaderFooterViewProtocol <NSObject>
 
 @optional
 

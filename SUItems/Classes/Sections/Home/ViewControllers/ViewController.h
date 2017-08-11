@@ -5,9 +5,9 @@
 //  Copyright © 2017年 http://h94uang@gmail.com All rights reserved.
 //
 
-#import "SUVC.h"
+#import "SUViewController.h"
 
-@interface ViewController : SUVC
+@interface ViewController : SUViewController
 
 
 @end

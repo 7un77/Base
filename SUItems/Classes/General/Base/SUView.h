@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SUVProtocol.h"
+#import "SUViewProtocol.h"
 
-@interface SUV : UIView <SUVProtocol>
+@interface SUView : UIView <SUViewProtocol>
 
 @end

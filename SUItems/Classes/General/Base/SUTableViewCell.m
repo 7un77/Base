@@ -5,9 +5,9 @@
 //  Copyright © 2017年 http://h94uang@gmail.com All rights reserved.
 //
 
-#import "SUTableVCell.h"
+#import "SUTableViewCell.h"
 
-@implementation SUTableVCell
+@implementation SUTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

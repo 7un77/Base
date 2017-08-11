@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SUTableVHeaderFooterVProtocol.h"
+#import "SUTableHeaderFooterViewProtocol.h"
 
-@interface SUTableVHeaderFooterV : UITableViewHeaderFooterView <SUTableVHeaderFooterVProtocol>
+@interface SUTableHeaderFooterView : UITableViewHeaderFooterView <SUTableHeaderFooterViewProtocol>
 
 @end

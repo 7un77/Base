@@ -5,9 +5,9 @@
 //  Copyright © 2017年 http://h94uang@gmail.com All rights reserved.
 //
 
-#import "SUCollectionVCell.h"
+#import "SUCollectionViewCell.h"
 
-@implementation SUCollectionVCell
+@implementation SUCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

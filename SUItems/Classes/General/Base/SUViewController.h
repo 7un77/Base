@@ -6,9 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SUVCProtocol.h"
+#import "SUViewControllerProtocol.h"
 
-@interface SUVC : UIViewController <SUVCProtocol>
+@interface SUViewController : UIViewController <SUViewControllerProtocol>
 
 /**
  *  VIEW是否渗透导航栏

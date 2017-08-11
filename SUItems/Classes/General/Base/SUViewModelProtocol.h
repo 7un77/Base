@@ -37,7 +37,7 @@ const NSString *RefreshDataStatusMapper[] = {
     [RefreshUI]                     = @"仅刷新布局"
 };
 
-@protocol SUVMProtocol <NSObject>
+@protocol SUViewModelProtocol <NSObject>
 
 @optional
 

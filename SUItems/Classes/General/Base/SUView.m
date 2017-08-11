@@ -5,9 +5,9 @@
 //  Copyright © 2017年 http://h94uang@gmail.com All rights reserved.
 //
 
-#import "SUV.h"
+#import "SUView.h"
 
-@implementation SUV
+@implementation SUView
 
 - (instancetype)init
 {
@@ -20,7 +20,7 @@
     return self;
 }
 
-- (instancetype)initWithViewModel:(id<SUVMProtocol>)viewModel {
+- (instancetype)initWithViewModel:(id<SUViewModelProtocol>)viewModel {
     
     self = [super init];
     if (self) {
